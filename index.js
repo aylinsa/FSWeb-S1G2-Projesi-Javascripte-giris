@@ -114,8 +114,42 @@ OYUNUN KURALLARI: Makas Kağıdı yener| Kağıt Taşı yener | Taş Makas'ı ye
 */
 
 function oyun(oyuncu, bilgisayar) {
-  /*buraya kodunu yazabilirsin*/
+  if (oyuncu == "Taş") {
+    if (bilgisayar == "Taş") {
+      console.log("Beraberlik")
+    }
+    else if (bilgisayar == "Kağıt") {
+      console.log("Kaybettin!")
+    }
+    else {
+      console.log("Kazandın!")
+    }
+  }
+  else if (oyuncu == "Kağıt") {
+    if (bilgisayar == "Kağıt") {
+      console.log("Beraberlik")
+    }
+    else if (bilgisayar == "Makas") {
+      console.log("Kaybettin!")
+    }
+    else {
+      console.log("Kazandın!")
+    }
+  }
+  else {
+    if (bilgisayar == "Makas") {
+      console.log("Beraberlik")
+    }
+    else if (bilgisayar == "Taş") {
+      console.log("Kaybettin!")
+    }
+    else {
+      console.log("Kazandın!")
+    }
+  }
 }
+
+oyun("Taş", "Makas")
 
 // Şimdi Taş, Kağıt, Makas oyununu bilgisayara karşı oynayalım!
 /*
@@ -132,6 +166,29 @@ function oyun(oyuncu, bilgisayar) {
 Şimdi kendi seçtiğiniz bir seçime karşı bilgisayarın rastgele oluşturduğu seçimi yukarıda yazdığınız oyun fonsiyonu ile oynayın ve sonucu console'a yazdırın.
 Örn: console.log(oyun("Makas",bilgisayarinSecimi()))
 */
+
+function bilgisayarinSecimi() {
+
+  let secim = Math.random() * 3
+
+  if (secim < 1) {
+    return "Makas"
+  }
+  else if (secim > 2) {
+    return "Kağıt"
+  }
+  else {
+    return "Taş"
+  }
+}
+
+oyun("Makas", bilgisayarinSecimi())
+
+
+
+
+
+
 
 /* Görev 4 : Metrik Dönüştürücü */
 
@@ -204,16 +261,16 @@ Aşağdakileri notHesapla fonksiyonunda yapın.
 
 
 function notHesapla(Not) {
-  if ((90 <= Not) && (Not<= 100)) {
+  if ((90 <= Not) && (Not <= 100)) {
     console.log("A aldın")
   }
-  else if ((80 <= Not) &&(Not <= 89)){
+  else if ((80 <= Not) && (Not <= 89)) {
     console.log("B aldın")
   }
-  else if ((70 <= Not) &&(Not <= 79)){
+  else if ((70 <= Not) && (Not <= 79)) {
     console.log("C aldın")
   }
-  else if ((60 <= Not) &&(Not <= 69)){
+  else if ((60 <= Not) && (Not <= 69)) {
     console.log("D aldın")
   }
   else if (60 > Not) {
@@ -234,12 +291,21 @@ Aşağıdakileri sesliHarfSayaci fonskiyonunda yapın.
 İPUCU - .includes() methoduna bakabilirsin. (https://www.w3schools.com/jsref/jsref_includes.asp)
 */
 
+const sesliHarfler = ["a", "A", "e", "E", "i", "ı", "I", "İ", "o", "O", "ö", "Ö", "u", "U", "ü", "Ü"];
 
-function sesliHarfSayaci(/*buraya kodunu yazabilirsin*/) {
-  /*buraya kodunu yazabilirsin*/
+function sesliHarfSayaci(harfSay) {
+  let sayac = 0
+
+  for (let index = 0; index < harfSay.length; index++) {
+    let chr = harfSay.substring(index, index + 1);
+    if (sesliHarfler.includes(chr)) {
+      sayac = sayac + 1
+    }
+  }
+  console.log(sayac)
 }
 
-
+sesliHarfSayaci("sedef")
 
 /* Lütfen bu satırın alt tarafını değiştirmeyin */
 function sa() {
