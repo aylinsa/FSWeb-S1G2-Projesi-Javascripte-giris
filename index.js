@@ -305,7 +305,7 @@ function sesliHarfSayaci(harfSay) {
   console.log(sayac)
 }
 
-sesliHarfSayaci("sedef")
+sesliHarfSayaci("sedef aylin")
 
 /* Lütfen bu satırın alt tarafını değiştirmeyin */
 function sa() {
